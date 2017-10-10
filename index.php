@@ -17,4 +17,3 @@ foreach ($array2 as $item => $value)
 print_r($array2);
 
 ?>
- 
