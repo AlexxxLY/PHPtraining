@@ -1,6 +1,6 @@
 
 <?php
-//Task-1
+//Task-1!
 $revertArray = ["first" => "olleH",
                 "wrong" => "dlroW", "dlroW", "hsiniF"];
 
