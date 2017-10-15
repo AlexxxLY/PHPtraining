@@ -32,7 +32,7 @@
 
      public function printClass($name, $speak, $can, $breed)
      {
-         parent::printClass($name, $speak, $can,$breed);
+         parent::printClass($name, $speak, $can, $breed);
          $this->breed=$breed;
          echo "My breed ".$breed." ";
          echo "I have a tail";
