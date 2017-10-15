@@ -38,6 +38,7 @@
 class labrador extends Dog{
      public $breed=' Labrador ';
 }
+
 $dog = new labrador;
 $dog->name=' Chaky ';
 $dog->vol=' Gav-gav ';
