@@ -7,13 +7,13 @@
 
   public function printClass($name,$speak,$can)
   {
-//      $this->name=$name;
-//      $this->speak=$speak;
-//      $this->can=$can;
+      $this->name=$name;
+      $this->speak=$speak;
+      $this->can=$can;
       echo " **** ";
       echo "My name is " .$name." ";
-      echo "I cant speak ". $speak." ";
-      echo "I cant ".$can." ";
+      echo "I can speak ". $speak." ";
+      echo "I can ".$can." ";
 
   }
 
@@ -23,17 +23,26 @@
  $gus->name='Sheptun';
  $gus->speak='Ga-ga-ga';
  $gus->can='Fly';
- $gus->printClass($name,$speak,$can);
+ $gus->printClass($gus->name,$gus->speak, $gus->can);
 
- /*class Dog extends Animal{
+ class Dog extends Animal{
 
 //     private $tail;
-     private $breed;
-     public function __construct($name, $speak, $can)
+     public $breed;
+
+     public function printClass($name, $speak, $can, $breed)
      {
-         parent::__construct($name, $speak, $can);
+         parent::printClass($name, $speak, $can,$breed);
+         $this->breed=$breed;
+         echo "My breed ".$breed." ";
+         echo "I have a tail";
+
      }
 }
 $dog = new Dog('Chaky','Gav-gav','run','Labrador');
- */
+$dog->name='Chaky';
+$dog->speak='Gav-gav';
+$dog->can='Run';
+$dog->breed='Labrador';
+$dog->printClass($dog->name,$dog->speak,$dog->can,$dog->breed);
 ?>
