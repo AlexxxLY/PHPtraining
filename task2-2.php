@@ -1,31 +1,37 @@
 <?php
 
- class All{
+ abstract class All{
      public $name;
-     public $vol;
      public $species;
 
-     public function Volume($vol)
-     {
-         $this->vol=$vol;
-         echo " I speak ".$vol." ";
-     }
+     abstract public function Volume();
 
  }
- class Gus extends All {
+ abstract class Birds extends All{
+     abstract function Fly();
+ }
+ abstract class Animals extends All {
+     abstract function Run();
+ }
+ class Gus extends Birds {
     public $species=' Gus ';
-    public function Fly(){
+
+    public function Volume(){
+        echo " I can speak ";
+    }
+
+     public function Fly(){
         echo " I can Fly! ";
     }
  }
 
- $gus = new Gus;
- $gus->name=' Sheptun ';
- $gus->vol=' Ga-ga-ga ';
-
- class Dog extends All {
+ class Dog extends Animals {
 
      public $species=' Dog ';
+
+     public function Volume(){
+         echo " I can speak ";
+     }
 
      public function tail(){
          echo " I have a Tail ";
@@ -33,6 +39,7 @@
      public function Run(){
         echo " I can RUN! ";
     }
+
 }
 
 class labrador extends Dog{
@@ -41,16 +48,18 @@ class labrador extends Dog{
 
 $dog = new labrador;
 $dog->name=' Chaky ';
-$dog->vol=' Gav-gav ';
+
+$gus = new Gus;
+$gus->name=' Sheptun ';
 
 echo " I m ".$gus->species.". My name is ".$gus->name;
-     $gus->Volume($gus->vol);
+     $gus->Volume();
      $gus->Fly();
-     echo"****";
+     echo'<br>';
 echo " I m ".$dog->species.". My name is ".$dog->name.
      ". My breed is ".$dog->breed;
-     $dog->Volume($dog->vol);
+     $dog->Volume();
      $dog->Run();
      $dog->tail();
-     echo"****";
+     echo '<br>';
 ?>
